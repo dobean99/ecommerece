@@ -63,8 +63,6 @@ class _SignUpFormState extends State<SignUpForm> {
             press: () {
               if (_formKey.currentState?.validate() == true) {
                 _formKey.currentState?.save();
-              }
-              if (errors.length == 0) {
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
@@ -149,7 +147,7 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
-        return null;
+          email= value;
       },
       validator: (value) {
         if (value!.isEmpty) {

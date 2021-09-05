@@ -30,7 +30,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
                 Text(
-                  "Sign in with your email and password  \nor continue with social media",
+                  "Complete your details \nor continue with social media",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(

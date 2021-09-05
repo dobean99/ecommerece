@@ -23,7 +23,7 @@ class _BodyState extends State<Body> {
             child: Column(
               children: [
                 Text(
-                  'Welcome!',
+                  'Register Account',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: getProportionateScreenWidth(18),
@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
                 Text(
-                  "Sign in with your email and password  \nor continue with social media",
+                  "Complete your details or continue \nwith social media",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
