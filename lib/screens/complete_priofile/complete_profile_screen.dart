@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/complete_priofile/components/body.dart';
 import 'package:flutter/material.dart';
 class CompleteProfileScreen extends StatelessWidget {
   static String routeName='/complete_profile';
@@ -5,6 +6,13 @@ class CompleteProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Complete Profile'
+        ),
+        centerTitle: true,
+      ),
+      body: Body(),
+    );
   }
 }
