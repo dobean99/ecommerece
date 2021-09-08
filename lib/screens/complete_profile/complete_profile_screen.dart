@@ -1,5 +1,6 @@
-import 'package:ecommerce/screens/complete_priofile/components/body.dart';
 import 'package:flutter/material.dart';
+
+import 'components/body.dart';
 class CompleteProfileScreen extends StatelessWidget {
   static String routeName='/complete_profile';
   const CompleteProfileScreen({Key? key}) : super(key: key);

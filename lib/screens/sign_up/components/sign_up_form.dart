@@ -1,6 +1,6 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constants.dart';
-import 'package:ecommerce/screens/complete_priofile/complete_profile_screen.dart';
+import 'package:ecommerce/screens/complete_profile/complete_profile_screen.dart';
 import 'package:ecommerce/screens/sign_in/components/custom_suffix_icon.dart';
 import 'package:ecommerce/screens/sign_in/components/form_error.dart';
 import 'package:flutter/material.dart';

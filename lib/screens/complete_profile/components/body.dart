@@ -1,7 +1,7 @@
-import 'package:ecommerce/screens/complete_priofile/components/complete_profile_form.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
+import 'complete_profile_form.dart';
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
