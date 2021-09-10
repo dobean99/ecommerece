@@ -8,6 +8,7 @@ import 'package:ecommerce/screens/otp/otp_screen.dart';
 import 'package:ecommerce/screens/sign_in/sign_in_screen.dart';
 import 'package:ecommerce/screens/sign_up/sign_up_screen.dart';
 import 'package:ecommerce/screens/splash/splash_screen.dart';
+import 'package:ecommerce/screens/user_profile/user_profile_screen.dart';
 import 'package:flutter/widgets.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -21,4 +22,5 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   DetailProductScreen.routeName: (context) => DetailProductScreen(),
   CartScreen.routeName: (context) => CartScreen(),
+  UserProfileScreen.routeName: (context) => UserProfileScreen(),
 };
