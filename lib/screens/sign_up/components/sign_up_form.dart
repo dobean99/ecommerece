@@ -1,8 +1,8 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constants.dart';
-import 'package:ecommerce/screens/complete_profile/complete_profile_screen.dart';
 import 'package:ecommerce/screens/sign_in/components/custom_suffix_icon.dart';
 import 'package:ecommerce/screens/sign_in/components/form_error.dart';
+import 'package:ecommerce/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
@@ -20,6 +20,11 @@ class _SignUpFormState extends State<SignUpForm> {
   late String email;
   late String password;
   late String confirmPassword;
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+  AuthClass authClass = AuthClass();
+
+
   void addError({String? error}) {
     if (!errors.contains(error))
       setState(() {
@@ -33,6 +38,21 @@ class _SignUpFormState extends State<SignUpForm> {
         errors.remove(error);
       });
   }
+
+  @override
+  void initState() {
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -60,10 +80,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           DefaultButton(
             text: "Continue",
-            press: () {
+            press: () async {
               if (_formKey.currentState?.validate() == true) {
                 _formKey.currentState?.save();
-                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+                await authClass.signUp(email, password, context);
               }
             },
           )
@@ -71,6 +91,7 @@ class _SignUpFormState extends State<SignUpForm> {
       ),
     );
   }
+
   TextFormField buildConfirmPasswordFormField() {
     return TextFormField(
       obscureText: true,
@@ -106,6 +127,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      controller: _passwordController,
       obscureText: true,
       onSaved: (newValue) => password = newValue!,
       onChanged: (value) {
@@ -139,6 +161,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
+      controller: _emailController,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
@@ -147,7 +170,7 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
-          email= value;
+        email = value;
       },
       validator: (value) {
         if (value!.isEmpty) {

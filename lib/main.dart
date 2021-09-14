@@ -1,9 +1,12 @@
 import 'package:ecommerce/routes.dart';
 import 'package:ecommerce/screens/splash/splash_screen.dart';
 import 'package:ecommerce/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -20,5 +23,5 @@ class MyApp extends StatelessWidget {
       routes: routes,
     );
   }
-
 }
+

@@ -1,6 +1,7 @@
 import 'package:ecommerce/components/no_account.dart';
 import 'package:ecommerce/screens/sign_in/components/sign_in_form.dart';
 import 'package:ecommerce/screens/sign_in/components/social_widget.dart';
+import 'package:ecommerce/services/auth_service.dart';
 import 'package:ecommerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  AuthClass authClass = AuthClass();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,12 +50,17 @@ class _BodyState extends State<Body> {
                   children: [
                     SocialWidget(
                       image: 'assets/icons/google-icon.svg',
+                      press: () async {
+                        await authClass.googleSignIn(context);
+                      },
                     ),
                     SocialWidget(
                       image: 'assets/icons/facebook-2.svg',
+                      press: () {},
                     ),
                     SocialWidget(
                       image: 'assets/icons/twitter.svg',
+                      press: () {},
                     ),
                   ],
                 ),
@@ -68,4 +76,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382663096880",
+    "project_id": "ecommerce-6ffb9",
+    "storage_bucket": "ecommerce-6ffb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382663096880:android:625161a9f9012ce10a8bf5",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382663096880-pnii8ucnuokl88eirlq9g93i73isjp07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL3dOz4xuuzNwbJbUvkB8ciSGiHwAqjoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382663096880-pnii8ucnuokl88eirlq9g93i73isjp07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

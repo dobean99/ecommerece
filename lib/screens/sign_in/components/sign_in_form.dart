@@ -1,6 +1,6 @@
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/screens/forgot_password/forgot_password_screen.dart';
-import 'package:ecommerce/screens/login_success/login_success_screen.dart';
+import 'package:ecommerce/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -17,6 +17,7 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
+  AuthClass authClass=AuthClass();
   final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
@@ -62,8 +63,7 @@ class _SignInFormState extends State<SignInForm> {
               Spacer(),
               GestureDetector(
                 onTap: () =>
-                    Navigator.pushNamed(
-                        context, ForgotPassword.routeName),
+                    Navigator.pushNamed(context, ForgotPassword.routeName),
                 child: Text(
                   "Forgot Password",
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -71,16 +71,16 @@ class _SignInFormState extends State<SignInForm> {
               )
             ],
           ),
-          FormError(errors:errors ),
+          FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
             text: "Continue",
-            press: () {
+            press: () async {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccess.routeName);
+                authClass.emailSignIn(email, password, context);
               }
             },
           ),

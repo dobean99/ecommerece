@@ -46,12 +46,15 @@ class _BodyState extends State<Body> {
                   children: [
                     SocialWidget(
                       image: 'assets/icons/google-icon.svg',
+                      press: () {},
                     ),
                     SocialWidget(
                       image: 'assets/icons/facebook-2.svg',
+                      press: () {},
                     ),
                     SocialWidget(
                       image: 'assets/icons/twitter.svg',
+                      press: () {},
                     ),
                   ],
                 ),
@@ -66,5 +69,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-
-
